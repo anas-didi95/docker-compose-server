@@ -32,6 +32,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:?MONGO_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:?MONGO_PASSWORD}
     volumes:
+      - ./mongodump:/mongodump
       - mongodata:/data/db
 
   mongo-express:
