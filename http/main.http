@@ -1,0 +1,8 @@
+@host = localhost
+@port = 5000
+@hostname = {{host}}:{{port}}
+
+### Health check
+GET http://{{hostname}}/ping
+Accept: application/json
+Content-Type: application/json
