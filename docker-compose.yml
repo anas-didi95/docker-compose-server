@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+  security:
+    build:
+      context: .
+      dockerfile: dockerfile.security
+    environment:
+      APP_PORT: 5000
+      APP_HOST: 0.0.0.0
+      LOG_LEVEL: info
+      GRAPHIQL_IS_ENABLE: "false"
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET}
+      JWT_ISSUER: ${JWT_ISSUER:?JWT_ISSUER}
+      JWT_EXPIRE_IN_MINUTES: ${JWT_EXPIRE_IN_MINUTES:?JWT_EXPIRE_IN_MINUTES}
+      MONGO_HOST: ${MONGO_HOST:?MONGO_HOST}
+      MONGO_PORT: ${MONGO_PORT:?MONGO_PORT}
+      MONGO_USERNAME: ${MONGO_USERNAME:?MONGO_USERNAME}
+      MONGO_PASSWORD: ${MONGO_PASSWORD:?MONGO_PASSWORD}
+      MONGO_AUTH_SOURCE: ${MONGO_AUTH_SOURCE:?MONGO_AUTH_SOURCE}
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./log:/workspace/log
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.2.8
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME:?MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:?MONGO_PASSWORD}
+    volumes:
+      - mongodata:/data/db
+
+  mongo-express:
+    image: mongo-express:0.54.0
+    restart: always
+    ports:
+      - "10000:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USERNAME:?MONGO_USERNAME}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_PASSWORD:?MONGO_PASSWORD}
+      ME_CONFIG_MONGODB_SERVER: ${MONGO_HOST:?MONGO_HOST}
+      ME_CONFIG_MONGODB_PORT: ${MONGO_PORT:?MONGO_PORT}
+    depends_on:
+      - mongo
+
+volumes:
+  mongodata:
