@@ -81,3 +81,143 @@
 2020-09-06 10:07:33.745 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] HTTP server started on 0.0.0.0:5000
 2020-09-06 10:07:33.931 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [configureMongoCollectionIndexes] Mongo create index 'idx_username' succeed.
 2020-09-06 10:07:34.146 [vert.x-eventloop-thread-3] INFO  com.anasdidi.security.api.graphql.GraphqlVerticle - [start] Deployed success
+2020-09-06 10:15:40.539 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] configRetriever
+{
+  "PATH" : "/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+  "GRAPHIQL_IS_ENABLE" : true,
+  "MONGO_AUTH_SOURCE" : "admin",
+  "MONGO_HOST" : "mongo",
+  "JAVA_HOME" : "/usr/local/openjdk-11",
+  "JWT_ISSUER" : "-",
+  "LANG" : "C.UTF-8",
+  "MONGO_USERNAME" : "mongo",
+  "HOSTNAME" : "98eb221c175c",
+  "JWT_SECRET" : "-",
+  "MONGO_PORT" : 27017.0,
+  "MONGO_PASSWORD" : "-",
+  "JWT_EXPIRE_IN_MINUTES" : 30.0,
+  "APP_HOST" : "0.0.0.0",
+  "PWD" : "/workspace",
+  "JAVA_VERSION" : "11.0.8",
+  "APP_PORT" : 5000.0,
+  "LOG_LEVEL" : "info",
+  "HOME" : "/root",
+  "TEST_MONGO_PASSWORD" : "-"
+}
+2020-09-06 10:15:40.925 [vert.x-eventloop-thread-1] INFO  com.anasdidi.security.api.jwt.JwtController - [start] Deployed success
+2020-09-06 10:15:40.990 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [start] Deployed success
+2020-09-06 10:15:41.366 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] HTTP server started on 0.0.0.0:5000
+2020-09-06 10:15:41.440 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [configureMongoCollectionIndexes] Mongo create index 'idx_username' succeed.
+2020-09-06 10:15:41.738 [vert.x-eventloop-thread-3] INFO  com.anasdidi.security.api.graphql.GraphqlVerticle - [start] Deployed success
+2020-09-06 10:17:09.559 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] configRetriever
+{
+  "PATH" : "/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+  "GRAPHIQL_IS_ENABLE" : true,
+  "MONGO_AUTH_SOURCE" : "admin",
+  "MONGO_HOST" : "mongo",
+  "JAVA_HOME" : "/usr/local/openjdk-11",
+  "JWT_ISSUER" : "-",
+  "LANG" : "C.UTF-8",
+  "MONGO_USERNAME" : "mongo",
+  "HOSTNAME" : "24f1b8fdf9e6",
+  "JWT_SECRET" : "-",
+  "MONGO_PORT" : 27017.0,
+  "MONGO_PASSWORD" : "-",
+  "JWT_EXPIRE_IN_MINUTES" : 30.0,
+  "APP_HOST" : "0.0.0.0",
+  "PWD" : "/workspace",
+  "JAVA_VERSION" : "11.0.8",
+  "APP_PORT" : 5000.0,
+  "LOG_LEVEL" : "info",
+  "HOME" : "/root",
+  "TEST_MONGO_PASSWORD" : "-"
+}
+2020-09-06 10:17:09.929 [vert.x-eventloop-thread-1] INFO  com.anasdidi.security.api.jwt.JwtController - [start] Deployed success
+2020-09-06 10:17:09.996 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [start] Deployed success
+2020-09-06 10:17:10.249 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] HTTP server started on 0.0.0.0:5000
+2020-09-06 10:17:10.510 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [configureMongoCollectionIndexes] Mongo create index 'idx_username' succeed.
+2020-09-06 10:17:10.609 [vert.x-eventloop-thread-3] INFO  com.anasdidi.security.api.graphql.GraphqlVerticle - [start] Deployed success
+2020-09-06 10:17:25.484 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] configRetriever
+{
+  "PATH" : "/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+  "GRAPHIQL_IS_ENABLE" : true,
+  "MONGO_AUTH_SOURCE" : "admin",
+  "MONGO_HOST" : "mongo",
+  "JAVA_HOME" : "/usr/local/openjdk-11",
+  "JWT_ISSUER" : "-",
+  "LANG" : "C.UTF-8",
+  "MONGO_USERNAME" : "mongo",
+  "HOSTNAME" : "4bbd7d4a3d59",
+  "JWT_SECRET" : "-",
+  "MONGO_PORT" : 27017.0,
+  "MONGO_PASSWORD" : "-",
+  "JWT_EXPIRE_IN_MINUTES" : 30.0,
+  "APP_HOST" : "0.0.0.0",
+  "PWD" : "/workspace",
+  "JAVA_VERSION" : "11.0.8",
+  "APP_PORT" : 5000.0,
+  "LOG_LEVEL" : "info",
+  "HOME" : "/root",
+  "TEST_MONGO_PASSWORD" : "-"
+}
+2020-09-06 10:17:25.740 [vert.x-eventloop-thread-1] INFO  com.anasdidi.security.api.jwt.JwtController - [start] Deployed success
+2020-09-06 10:17:25.819 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [start] Deployed success
+2020-09-06 10:17:25.975 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] HTTP server started on 0.0.0.0:5000
+2020-09-06 10:17:26.221 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [configureMongoCollectionIndexes] Mongo create index 'idx_username' succeed.
+2020-09-06 10:17:26.311 [vert.x-eventloop-thread-3] INFO  com.anasdidi.security.api.graphql.GraphqlVerticle - [start] Deployed success
+2020-09-06 10:19:25.616 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] configRetriever
+{
+  "PATH" : "/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+  "GRAPHIQL_IS_ENABLE" : true,
+  "MONGO_AUTH_SOURCE" : "admin",
+  "MONGO_HOST" : "mongo",
+  "JAVA_HOME" : "/usr/local/openjdk-11",
+  "JWT_ISSUER" : "-",
+  "LANG" : "C.UTF-8",
+  "MONGO_USERNAME" : "mongo",
+  "HOSTNAME" : "13a295c05860",
+  "JWT_SECRET" : "-",
+  "MONGO_PORT" : 27017.0,
+  "MONGO_PASSWORD" : "-",
+  "JWT_EXPIRE_IN_MINUTES" : 30.0,
+  "APP_HOST" : "0.0.0.0",
+  "PWD" : "/workspace",
+  "JAVA_VERSION" : "11.0.8",
+  "APP_PORT" : 5000.0,
+  "LOG_LEVEL" : "info",
+  "HOME" : "/root",
+  "TEST_MONGO_PASSWORD" : "-"
+}
+2020-09-06 10:19:26.126 [vert.x-eventloop-thread-1] INFO  com.anasdidi.security.api.jwt.JwtController - [start] Deployed success
+2020-09-06 10:19:26.238 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [start] Deployed success
+2020-09-06 10:19:26.741 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] HTTP server started on 0.0.0.0:5000
+2020-09-06 10:19:26.882 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [configureMongoCollectionIndexes] Mongo create index 'idx_username' succeed.
+2020-09-06 10:19:27.333 [vert.x-eventloop-thread-3] INFO  com.anasdidi.security.api.graphql.GraphqlVerticle - [start] Deployed success
+2020-09-06 10:34:12.323 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] configRetriever
+{
+  "PATH" : "/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+  "GRAPHIQL_IS_ENABLE" : true,
+  "MONGO_AUTH_SOURCE" : "admin",
+  "MONGO_HOST" : "mongo",
+  "JAVA_HOME" : "/usr/local/openjdk-11",
+  "JWT_ISSUER" : "-",
+  "LANG" : "C.UTF-8",
+  "MONGO_USERNAME" : "mongo",
+  "HOSTNAME" : "489c773ac722",
+  "JWT_SECRET" : "-",
+  "MONGO_PORT" : 27017.0,
+  "MONGO_PASSWORD" : "-",
+  "JWT_EXPIRE_IN_MINUTES" : 30.0,
+  "APP_HOST" : "0.0.0.0",
+  "PWD" : "/workspace",
+  "JAVA_VERSION" : "11.0.8",
+  "APP_PORT" : 5000.0,
+  "LOG_LEVEL" : "info",
+  "HOME" : "/root",
+  "TEST_MONGO_PASSWORD" : "-"
+}
+2020-09-06 10:34:12.678 [vert.x-eventloop-thread-1] INFO  com.anasdidi.security.api.jwt.JwtController - [start] Deployed success
+2020-09-06 10:34:12.799 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [start] Deployed success
+2020-09-06 10:34:13.112 [vert.x-eventloop-thread-0] INFO  com.anasdidi.security.MainVerticle - [start] HTTP server started on 0.0.0.0:5000
+2020-09-06 10:34:13.349 [vert.x-eventloop-thread-2] INFO  com.anasdidi.security.api.user.UserVerticle - [configureMongoCollectionIndexes] Mongo create index 'idx_username' succeed.
+2020-09-06 10:34:13.463 [vert.x-eventloop-thread-3] INFO  com.anasdidi.security.api.graphql.GraphqlVerticle - [start] Deployed success
