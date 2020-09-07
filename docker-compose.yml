@@ -5,11 +5,12 @@ services:
     build:
       context: .
       dockerfile: dockerfile.security
+    restart: always
     environment:
       APP_PORT: 5000
       APP_HOST: 0.0.0.0
       LOG_LEVEL: info
-      GRAPHIQL_IS_ENABLE: "false"
+      GRAPHIQL_IS_ENABLE: "true"
       JWT_SECRET: ${JWT_SECRET:?JWT_SECRET}
       JWT_ISSUER: ${JWT_ISSUER:?JWT_ISSUER}
       JWT_EXPIRE_IN_MINUTES: ${JWT_EXPIRE_IN_MINUTES:?JWT_EXPIRE_IN_MINUTES}
@@ -24,6 +25,16 @@ services:
       - ./log:/workspace/log
     depends_on:
       - mongo
+
+  nginx:
+    image: nginx:1.19.2-alpine
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - security
 
   mongo:
     image: mongo:4.2.8
