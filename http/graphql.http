@@ -1,11 +1,11 @@
 @port = 5000
 @host = localhost
 @hostname = {{host}}:{{port}}
-@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaXNzIjoiYW5hc2RpZGkuZGV2IiwiaWF0IjoxNTE2MjM5MDIyfQ.fzLgJlshK6aJ135zy_fFMigGJVdN-myDMWOrTiah3zY
-// signature=secret, issuer=anasdidi.dev
+@uri = /security/graphql
+@accessToken =
 
 // @name getUserList
-POST http://{{hostname}}/graphql
+POST http://{{hostname}}{{uri}}
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
@@ -18,7 +18,7 @@ Authorization: Bearer {{accessToken}}
 ###
 
 // @name getUserById
-POST http://{{hostname}}/graphql
+POST http://{{hostname}}{{uri}}
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
@@ -26,14 +26,14 @@ Authorization: Bearer {{accessToken}}
 {
   "query": "query ($id: String!) { getUserById(id: $id) { id username version } }",
   "variables": {
-    "id": "E300DC218B164E988533752B6562A4EC"
+    "id": "0B0A590B65684632AB8578E8793E67F6"
   }
 }
 
 ###
 
 // @name getUserByUsername
-POST http://{{hostname}}/graphql
+POST http://{{hostname}}{{uri}}
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
@@ -41,6 +41,6 @@ Authorization: Bearer {{accessToken}}
 {
   "query": "query ($username: String!) { getUserByUsername(username: $username) { id username version } }",
   "variables": {
-    "username": "superadmin"
+    "username": "anas.didi95"
   }
 }
