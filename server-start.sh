@@ -15,3 +15,5 @@ docker-compose up -d
 if ${IS_DISABLE_MONGO_EXPRESS}; then
     docker-compose stop mongo-express
 fi
+
+docker-compose ps
