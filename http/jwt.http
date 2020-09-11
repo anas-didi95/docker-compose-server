@@ -12,3 +12,17 @@ Content-Type: application/json
   "username": "",
   "password": ""
 }
+
+###
+
+@refreshId = {{login.response.body.$.data.refreshId}}
+
+// @name refresh
+POST http://{{hostname}}{{uri}}/refresh
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.$.data.accessToken}}
+
+{
+  "id": "{{refreshId}}"
+}
