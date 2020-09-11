@@ -1,11 +1,12 @@
 #!/bin/bash
 
 DATABASE=$1
+COLLECTION=$2
 CURRENT_DATETIME=$(date +"%y-%m-%d")T$(date +"%H-%M-%S")
 MONGO_USERNAME=$MONGO_INITDB_ROOT_USERNAME
 MONGO_PASSWORD=$MONGO_INITDB_ROOT_PASSWORD
 MONGO_AUTH_SOURCE=admin
-FOLDER_NAME=${DATABASE}_${CURRENT_DATETIME}
+FOLDER_NAME=${DATABASE}_${COLLECTION}_${CURRENT_DATETIME}
 
 echo // Parameters
 echo / DATABASE = $DATABASE
@@ -21,6 +22,13 @@ if [ -z "$DATABASE" ]; then
   exit 1
 fi
 
-mongodump --username=$MONGO_USERNAME --password=$MONGO_PASSWORD --authenticationDatabase=$MONGO_AUTH_SOURCE --db=$DATABASE --out=$FOLDER_NAME --verbose
+if [ -z "$COLLECTION" ]; then
+  echo "ERROR: COLLECTION (param#2) is undefined!"
+  exit 1
+fi
+
+mongodump \
+  --username=$MONGO_USERNAME --password=$MONGO_PASSWORD --authenticationDatabase=$MONGO_AUTH_SOURCE \
+  --db=$DATABASE --collection=$COLLECTION --out=$FOLDER_NAME --verbose
 
 exit 0
