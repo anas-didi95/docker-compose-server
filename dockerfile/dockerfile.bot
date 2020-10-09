@@ -1,0 +1,14 @@
+FROM maven:3.6.3-openjdk-11 as builder
+RUN set -x \
+  && git clone --single-branch --branch=deploy https://github.com/anas-didi95/vertx-telegram-bot.git
+WORKDIR /vertx-telegram-bot
+RUN set -x \
+  && mvn clean package -DskipTests
+
+###
+
+FROM openjdk:11-jre-slim as deployer
+WORKDIR /workspace
+COPY --from=builder /vertx-telegram-bot/target/bot-1.0.0-SNAPSHOT-fat.jar .
+ENTRYPOINT ["sh", "-c"]
+CMD ["exec java -jar bot-1.0.0-SNAPSHOT-fat.jar"]

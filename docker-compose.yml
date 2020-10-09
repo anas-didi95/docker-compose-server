@@ -26,6 +26,20 @@ services:
     depends_on:
       - mongo
 
+  bot:
+    build:
+      context: dockerfile
+      dockerfile: dockerfile.bot
+    restart: always
+    environment:
+      APP_PORT: 5001
+      APP_HOST: 0.0.0.0
+      LOG_LEVEL: info
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./log:/workspace/log
+
   nginx:
     image: nginx:1.19.2-alpine
     restart: always
