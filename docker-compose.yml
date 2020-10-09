@@ -35,6 +35,7 @@ services:
       APP_PORT: 5001
       APP_HOST: 0.0.0.0
       LOG_LEVEL: info
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN?:TELEGRAM_TOKEN}
     ports:
       - "5001:5001"
     volumes:
