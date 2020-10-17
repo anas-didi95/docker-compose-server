@@ -1,9 +1,9 @@
 FROM maven:3.6.3-openjdk-11 as builder
 RUN set -x \
-	&& git clone https://github.com/anas-didi95/vertx-security-server.git 
+  && git clone --single-branch --branch=deploy https://github.com/anas-didi95/vertx-security-server.git
 WORKDIR /vertx-security-server
 RUN set -x \
-	&& mvn clean package -DskipTests
+  && mvn clean package -DskipTests
 
 ###
 
