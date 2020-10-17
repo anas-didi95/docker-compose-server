@@ -1,6 +1,6 @@
 FROM maven:3.6.3-openjdk-11 as builder
 RUN set -x \
-  && git clone --single-branch --branch=deploy https://github.com/anas-didi95/vertx-telegram-bot.git
+  && git clone --single-branch --branch=main https://github.com/anas-didi95/vertx-telegram-bot.git
 WORKDIR /vertx-telegram-bot
 RUN set -x \
   && mvn clean package -DskipTests
