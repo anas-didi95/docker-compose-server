@@ -17,7 +17,7 @@ Docker Compose is used for quick orchestration to run multi-container applicatio
 Following are the summary of the services defined in **docker-compose.yml**:
 - **security**: [Security microservice.](https://github.com/anas-didi95/vertx-security-server) ![deploy](https://github.com/anas-didi95/vertx-security-server/workflows/deploy/badge.svg?branch=main)
 - **bot**: [Telegram bot microservice](https://github.com/anas-didi95/vertx-telegram-bot/tree/deploy) ![deploy](https://github.com/anas-didi95/vertx-telegram-bot/workflows/deploy/badge.svg?branch=main)
-- **budget**: [Budget microservice](https://github.com/anas-didi95/vertx-telegram-bot/tree/deploy)
+- **budget**: [Budget microservice](https://github.com/anas-didi95/vertx-telegram-bot/tree/deploy) ![deploy](https://github.com/anas-didi95/vertx-budget-server/workflows/deploy/badge.svg)
 - **nginx**: For reverse proxy of application.
 - **certbot**: To enable HTTPS from Let's Encrypt. Will also check certificate and do renewal if required.
 - **mongo**: The database.
