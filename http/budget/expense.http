@@ -1,0 +1,35 @@
+@baseUri=http://{{$processEnv APP_HOST}}:{{$processEnv APP_PORT}}/budget
+
+// @name create
+POST {{baseUri}}/api/expense
+Accept: application/json
+Content-Type: application/json
+
+{
+  "item": "Snack",
+  "price": 3
+}
+
+###
+
+// @name update
+PUT {{baseUri}}/api/expense/{{create.response.body.$.data.id}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "item": "Mineral water",
+  "price": 1.50,
+  "version": 0
+}
+
+###
+
+// @name delete
+DELETE {{baseUri}}/api/expense/{{create.response.body.$.data.id}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "version": 0
+}
