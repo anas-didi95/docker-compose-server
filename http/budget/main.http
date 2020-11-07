@@ -1,4 +1,4 @@
-@baseUri=http://{{$processEnv APP_HOST}}:{{$processEnv APP_PORT}}/budget
+@baseUri=http://localhost:5002/budget
 
 // @name ping
 GET {{baseUri}}/ping
