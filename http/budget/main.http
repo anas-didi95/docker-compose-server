@@ -1,0 +1,6 @@
+@baseUri=http://localhost:5002/budget
+
+// @name ping
+GET {{baseUri}}/ping
+Accept: application/json
+Content-Type: application/json

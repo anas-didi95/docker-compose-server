@@ -1,0 +1,28 @@
+@baseUri=http://localhost:5002/budget
+
+// @name getExpenseById
+POST {{baseUri}}/graphql
+Accept: application/json
+Content-Type: application/json
+
+{
+  "query": "query($id: String, $format: String) { expense(id: $id) { id item price createDate(format: $format) updateDate(format: $format) version } } ",
+  "variables": {
+    "id": "5fa68d4454497f14d290c46a",
+    "format": "yyyy-MM-dd"
+  }
+}
+
+###
+
+// @name getExpenseList
+POST {{baseUri}}/graphql
+Accept: application/json
+Content-Type: application/json
+
+{
+  "query": "query($format: String) { expenses { id item price createDate(format: $format) updateDate(format: $format) version } }",
+  "variables": {
+    "format": "EE, yyyy-MM-dd HH:mm:ss a"
+  }
+}
