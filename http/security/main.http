@@ -1,8 +1,6 @@
-@host = localhost
-@port = 5000
-@hostname = {{host}}:{{port}}
+@baseUrl = http://localhost:5000/security
 
 ### Health check
-GET http://{{hostname}}/security/ping
+GET {{baseUrl}}/ping
 Accept: application/json
 Content-Type: application/json
