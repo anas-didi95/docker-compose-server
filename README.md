@@ -17,11 +17,8 @@ Docker Compose is used for quick orchestration to run multi-container applicatio
 Following are the summary of the services defined in **docker-compose.yml**:
 - **security**: [Security microservice.](https://github.com/anas-didi95/vertx-security-server) ![deploy](https://github.com/anas-didi95/vertx-security-server/workflows/deploy/badge.svg?branch=main)
 - **bot**: [Telegram bot microservice](https://github.com/anas-didi95/vertx-telegram-bot/tree/deploy) ![deploy](https://github.com/anas-didi95/vertx-telegram-bot/workflows/deploy/badge.svg?branch=main)
-- **budget**: [Budget microservice](https://github.com/anas-didi95/vertx-telegram-bot/tree/deploy) ![deploy](https://github.com/anas-didi95/vertx-budget-server/workflows/deploy/badge.svg)
 - **nginx**: For reverse proxy of application.
 - **certbot**: To enable HTTPS from Let's Encrypt. Will also check certificate and do renewal if required.
-- **mongo**: The database.
-- **mongo-express**: Web-based MongoDB admin interface for debugging. *By default will be enable, unless explicitly disable when using script <b>server-start.sh</b>*.
 
 ---
 
@@ -38,7 +35,7 @@ chmod +x server-build.sh server-shutdown.sh server-start.sh init-letsencrypt.sh
 ```sh
 ./init-letsencrypt.sh
 ```
-5. Start server and disable mongo-express service.
+5. Start server in production mode *or set to false for development mode*.
 ```sh
 ./server-start.sh true
 ```

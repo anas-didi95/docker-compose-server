@@ -1,19 +1,25 @@
 #!/bin/bash
 
 ## Command line arguments
-IS_DISABLE_MONGO_EXPRESS=${1:-false}
+IS_PRODUCTION=${1:-false}
 
 ## Print command line arguments
-echo / Command line argument
-echo 1: IS_DISABLE_MONGO_EXPRESS=$IS_DISABLE_MONGO_EXPRESS
+echo "/ Command line argument"
+echo "1: IS_PRODUCTION=$IS_PRODUCTION"
 echo
 
 ## Run Process
 docker-compose down
 docker-compose up -d
+echo
+echo
 
-if ${IS_DISABLE_MONGO_EXPRESS}; then
-    docker-compose stop mongo-express
+echo "##############################################"
+if ${IS_PRODUCTION}; then
+  echo "###   Server started in production mode.   ###"
+else
+  echo "###   Server started in development mode.  ###"
 fi
+echo "##############################################"
 
 docker-compose ps
