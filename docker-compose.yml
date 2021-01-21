@@ -44,29 +44,6 @@ services:
     volumes:
       - ./log:/workspace/log
 
-  budget:
-    build:
-      context: dockerfile
-      dockerfile: dockerfile.budget
-    restart: always
-    environment:
-      APP_PORT: 5002
-      APP_HOST: 0.0.0.0
-      LOG_LEVEL: info
-      GRAPHIQL_ENABLE: "false"
-      MONGO_HOST: ${MONGO_HOST:?MONGO_HOST}
-      MONGO_PORT: ${MONGO_PORT:?MONGO_PORT}
-      MONGO_USERNAME: ${MONGO_USERNAME:?MONGO_USERNAME}
-      MONGO_PASSWORD: ${MONGO_PASSWORD:?MONGO_PASSWORD}
-      MONGO_AUTH_SOURCE: ${MONGO_AUTH_SOURCE:?MONGO_AUTH_SOURCE}
-      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET}
-      JWT_ISSUER: ${JWT_ISSUER:?JWT_ISSUER}
-      JWT_EXPIRE_IN_MINUTES: ${JWT_EXPIRE_IN_MINUTES:?JWT_EXPIRE_IN_MINUTES}
-    ports:
-      - "5002:5002"
-    volumes:
-      - ./log:/workspace/log
-
   nginx:
     image: nginx:1.19.2-alpine
     restart: always
