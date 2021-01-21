@@ -21,8 +21,6 @@ services:
       - "5000:5000"
     volumes:
       - ./log:/workspace/log
-    depends_on:
-      - mongo
 
   bot:
     build:
@@ -52,6 +50,7 @@ services:
       - ./certbot/www:/var/www/certbot
     depends_on:
       - security
+      - bot
 
   certbot:
     image: certbot/certbot
