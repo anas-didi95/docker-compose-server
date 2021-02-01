@@ -39,6 +39,20 @@ services:
     volumes:
       - ./log:/workspace/log
 
+  urlshort:
+    build:
+      context: dockerfile
+      dockerfile: dockerfile.urlshort
+    restart: always
+    environment:
+      APP_HOST: ${URLSHORT_APP_HOST:?URLSHORT_APP_HOST}
+      APP_PORT: ${URLSHORT_APP_PORT:?URLSHORT_APP_PORT}
+      MONGO_CONNECTION_STRING: ${URLSHORT_MONGO_CONNECTION_STRING:?URLSHORT_MONGO_CONNECTION_STRING}
+      BASE_URL: ${URLSHORT_BASE_URL:?URLSHORT_BASE_URL}
+      SHORT_URL_EXPIRE_IN_SECONDS: ${URLSHORT_SHORT_URL_EXPIRE_IN_SECONDS:?URLSHORT_SHORT_URL_EXPIRE_IN_SECONDS}
+    ports:
+      - "${URLSHORT_APP_PORT:?URLSHORT_APP_PORT}:${URLSHORT_APP_PORT:?URLSHORT_APP_PORT}"
+
   nginx:
     image: nginx:1.19.2-alpine
     restart: always
