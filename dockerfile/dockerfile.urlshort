@@ -5,10 +5,9 @@ WORKDIR /go/golang-urlshort-server
 RUN set -x \
   && CGO_ENABLED=0 go build -a -installsuffix cgo main.go
 
+###
+
 FROM golang:1.15.7-alpine3.13 as deployer
 WORKDIR /workspace
-COPY --from=builder /go/golang-urlshort-server .
-RUN set -x ls \
-  && pwd \
-  && ls -la
+COPY --from=builder /go/golang-urlshort-server/main .
 CMD [ "./main" ]
