@@ -50,6 +50,7 @@ To shutdown server,
 
 ## Credits
 * Nginx Certbot Docker [nginx-certbot](https://github.com/wmnnd/nginx-certbot) by wmnnd.
+* [golang-alpine - Build golang binaries for alpine linux](https://www.blang.io/posts/2015-04_golang-alpine-build-golang-binaries-for-alpine-linux/) by Benedikt Lang
 
 ---
 
