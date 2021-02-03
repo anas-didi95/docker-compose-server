@@ -1,7 +1,13 @@
-FROM golang:1.15.7-buster
+FROM golang:1.15.7-buster as builder
 RUN set -x \
   && git clone --single-branch --branch=deploy https://github.com/anas-didi95/golang-urlshort-server.git
 WORKDIR /go/golang-urlshort-server
 RUN set -x \
-  && go build main.go
+  && CGO_ENABLED=0 go build -a -installsuffix cgo main.go
+
+###
+
+FROM golang:1.15.7-alpine3.13 as deployer
+WORKDIR /workspace
+COPY --from=builder /go/golang-urlshort-server/main .
 CMD [ "./main" ]
