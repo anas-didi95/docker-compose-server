@@ -1,6 +1,7 @@
 FROM maven:3.6.3-openjdk-11 as builder
+ARG GIT_BRANCH
 RUN set -x \
-  && git clone --single-branch --branch=deploy https://github.com/anas-didi95/vertx-security-server.git
+  && git clone --single-branch --branch=${GIT_BRANCH} https://github.com/anas-didi95/vertx-security-server.git
 WORKDIR /vertx-security-server
 RUN set -x \
   && mvn clean package -DskipTests
@@ -8,7 +9,8 @@ RUN set -x \
 ###
 
 FROM openjdk:11-jre-slim as deployer
+ARG PACKAGE_NAME
 WORKDIR /workspace
-COPY --from=builder /vertx-security-server/target/security-1.0.0-SNAPSHOT-fat.jar .
+COPY --from=builder /vertx-security-server/target/${PACKAGE_NAME} .
 ENTRYPOINT ["sh", "-c"]
-CMD ["exec java -jar security-1.0.0-SNAPSHOT-fat.jar"]
+CMD ["exec java -jar ${PACKAGE_NAME}"]
