@@ -10,7 +10,8 @@ RUN set -x \
 
 FROM openjdk:11-jre-slim as deployer
 ARG PACKAGE_NAME
+ENV FAT_JAR_NAME ${PACKAGE_NAME}
 WORKDIR /workspace
-COPY --from=builder /vertx-security-server/target/${PACKAGE_NAME} .
+COPY --from=builder /vertx-security-server/target/${FAT_JAR_NAME} .
 ENTRYPOINT ["sh", "-c"]
-CMD ["exec java -jar ${PACKAGE_NAME}"]
+CMD ["exec java -jar ${FAT_JAR_NAME}"]
