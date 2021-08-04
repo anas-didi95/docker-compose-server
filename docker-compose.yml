@@ -6,8 +6,8 @@ services:
       context: dockerfile
       dockerfile: dockerfile.security
       args:
-        GIT_BRANCH: main
-        PACKAGE_NAME: security-2.0.0-SNAPSHOT-fat.jar
+        GIT_BRANCH: ${SECURITY_GIT_BRANCH:?SECURITY_GIT_BRANCH}
+        PACKAGE_NAME: ${SECURITY_PACKAGE_NAME:?SECURITY_PACKAGE_NAME}
     restart: always
     environment:
       JWT_SECRET: ${JWT_SECRET:?JWT_SECRET}
