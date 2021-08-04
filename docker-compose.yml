@@ -71,6 +71,7 @@ services:
     depends_on:
       - security
       - bot
+      - urlshort
 
   certbot:
     image: certbot/certbot
