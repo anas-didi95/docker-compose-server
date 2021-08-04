@@ -1,6 +1,6 @@
 @baseUrl = http://localhost:5000/security
 
-### Health check
-GET {{baseUrl}}/ping
+// @name health
+GET {{baseUrl}}/health
 Accept: application/json
 Content-Type: application/json

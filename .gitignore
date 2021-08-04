@@ -1,4 +1,6 @@
 .env
+*.bak
+
 log/
 mongodump/
 certbot/
